@@ -1,0 +1,94 @@
+:root {
+  color-scheme: light;
+  --paper: #fdfefe;
+  --ink: #182e4e;
+  --muted: #53627a;
+  --blue: #215db8;
+  --green: #35c83b;
+  --line: #d4e1f0;
+  font-family: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: var(--ink);
+  background: #e6e8ed;
+}
+* { box-sizing: border-box }
+html { scroll-behavior: smooth }
+body { margin: 0 }
+a { color: inherit; text-decoration: none }
+button { font: inherit; color: inherit; cursor: pointer }
+a:focus-visible, button:focus-visible { outline: 3px solid #162652; outline-offset: 4px }
+.bar, main, footer { width: min(94%, 1380px); margin-inline: auto }
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 1.5rem; margin-top: clamp(.65rem,2.4vw,2rem); padding: .8rem clamp(1rem,4vw,3.5rem); background: var(--green); color: #102d15 }
+.brand { font-weight: 800 }
+.bar nav { display: flex; flex-wrap: wrap; gap: .6rem clamp(.8rem,3vw,2rem); font-size: .9rem; font-weight: 650 }
+.bar a:hover { text-decoration: underline; text-underline-offset: .25em }
+main { display: grid; gap: clamp(.85rem,2.5vw,2rem) }
+.hero, .section { background-color: var(--paper) }
+.hero {
+  padding: clamp(1.15rem,4vw,3.5rem) clamp(1rem,4vw,3.5rem) 0;
+  background-image: radial-gradient(ellipse at 86% 31%,#e5eeff 0%,#f2f6ff 27%,transparent 54%);
+  overflow: hidden;
+}
+.cover-header { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; color: var(--blue); font-size: .9rem; font-weight: 750 }
+h1,h2,h3,p { margin-top: 0 }
+.cover-type { color: var(--blue); font: 450 clamp(3.2rem,14vw,12rem)/.93 "Helvetica Neue", Arial, sans-serif; letter-spacing: -.085em; margin: clamp(.8rem,3vw,2rem) 0 .22em }
+.cover-copy { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: .7rem; margin-bottom: clamp(2.8rem,7vw,6rem) }
+h1 { color: var(--blue); font-size: clamp(1.8rem,5.5vw,5rem); line-height: 1.14; letter-spacing: -.065em; margin-bottom: 0 }
+h1 span { color: var(--muted); font-weight: 350 }
+.cover-name { margin: 0; padding: .35rem .9rem; align-self: center; border-radius: 99px; background: var(--blue); color: white; font-weight: 750 }
+.folders { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: end; gap: clamp(.35rem,1.5vw,1rem) }
+.folder { --base: #cfedd0; --edge: #9acf9e; position: relative; display: flex; align-items: center; min-height: clamp(4rem,10vw,8.5rem); padding: .55rem clamp(.35rem,2vw,1.5rem); border: 1px solid var(--edge); border-radius: 0 .8rem 0 0; background: linear-gradient(125deg,var(--base),#ffffff); color: #173b26; font-size: clamp(.87rem,2.8vw,2rem); font-weight: 780 }
+.folder-career { --base: #cee5ff; --edge: #97bdef; color: #17467f; min-height: clamp(4.6rem,12vw,10rem) }
+.folder-resume { --base: #fff4c4; --edge: #e5ce7a; color: #614a13; min-height: clamp(4.25rem,11vw,9.25rem) }
+.folder-tab { position: absolute; top: 0; left: -1px; transform: translateY(-100%); background: var(--base); border: 1px solid var(--edge); border-bottom: 0; border-radius: .55rem .75rem 0 0; padding: .38rem clamp(.35rem,1.7vw,1.2rem); font-size: clamp(.77rem,1.35vw,1rem); white-space: nowrap }
+.folder:hover { box-shadow: inset 0 -4px var(--edge) }
+.section { padding: clamp(1.25rem,4vw,3.5rem); scroll-margin-top: 1rem }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; border-bottom: 2px solid var(--line); padding-bottom: 1rem; margin-bottom: 1.4rem }
+.eyebrow { color: var(--blue); font: 500 clamp(2.35rem,6vw,5.8rem)/1 "Helvetica Neue", Arial, sans-serif; letter-spacing: -.055em; margin-bottom: .3rem }
+h2 { font-size: clamp(1.05rem,1.8vw,1.5rem); margin-bottom: 0 }
+h3 { font-size: clamp(1.1rem,1.8vw,1.45rem); margin-bottom: .45rem }
+.section-head>p,.practice p:not(.eyebrow),.resume-intro,.resume-grid article p:last-child { color: var(--muted) }
+.section-head>p { margin-bottom: 0 }
+.works,.resume-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(.9rem,2vw,1.65rem) }
+.works article,.resume-grid article { background: #f2f7ff; border: 1px solid var(--line); border-radius: .65rem; overflow: hidden }
+.works h3,.works .tag { margin-inline: 1rem }
+.works h3 { margin-bottom: 1rem }
+.tag { color: #24518a; font-size: .875rem; margin: .85rem 0 .4rem }
+.frame { position: relative; display: block; width: 100%; aspect-ratio: 16/10; overflow: hidden; border: 0; padding: 0; background: #244065 }
+.frame video { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none }
+.frame span { position: absolute; right: .8rem; bottom: .8rem; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: white; color: var(--blue) }
+.frame:hover span { background: var(--blue); color: white }
+.practice { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem }
+.practice h3 { border-top: 1px solid var(--line); padding-top: .85rem }
+.practice p,.resume p { line-height: 1.65 }
+.resume .eyebrow { line-height: 1 }
+.resume-intro strong { color: var(--blue); margin-right: .5em }
+.resume-grid article { padding: 1rem }
+.resume-grid article .tag { margin-top: 0 }
+.resume-grid article p:last-child { margin-bottom: 0 }
+.secondary,.close { display: inline-flex; align-items: center; padding: .58rem .95rem; border: 1px solid var(--blue); border-radius: 99px; color: var(--blue); background: white; font-size: .9rem; font-weight: 700 }
+.secondary:hover,.close:hover { background: var(--blue); color: white }
+.end-page {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,340px);
+  gap: clamp(1.4rem,4vw,3rem);
+  align-items: center;
+  margin-block: clamp(.85rem,2.5vw,2rem) 2rem;
+  padding: clamp(2.5rem,7vw,6rem) clamp(1.25rem,4vw,3.5rem);
+  border-top: .55rem solid var(--green);
+  background: radial-gradient(ellipse at 85% 25%, #e5eeff, transparent 62%), var(--paper);
+}
+.end-page .eyebrow { font-size: clamp(3rem,9vw,8rem) }
+.end-name { margin: .7rem 0 1.35rem; color: var(--muted) }
+.end-contact { margin: 0 }
+.end-contact img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: .65rem }
+dialog { width: min(92vw,980px); max-height: 92dvh; border: 1px solid var(--line); border-radius: .65rem; background: var(--paper); color: var(--ink); padding: 1rem }
+dialog::backdrop { background: #081832ba }
+.dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem }
+#player { display: block; width: 100%; max-height: 71dvh; background: #000 }
+#direct { text-decoration: underline }
+@media (max-width: 590px) {
+  .section-head { align-items: flex-start; flex-direction: column }
+  .works,.practice,.resume-grid,.end-page { grid-template-columns: 1fr }
+  .end-contact { width: min(100%,340px) }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } }
