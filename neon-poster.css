@@ -1,0 +1,286 @@
+:root {
+  color-scheme: light;
+  --paper: #f5f6ee;
+  --ink: #121410;
+  --muted: #474d3f;
+  --line: #b5beac;
+  --blue: #275b00;
+  --violet: #47613c;
+  --surface: #e9edde;
+  --lime: #c7ff27;
+  background: #141714;
+}
+.bar,.bar a { background: transparent; color: #f5f6ee }
+.brand span,.bar a:hover { color: var(--lime) }
+.motion-shell { border: 5px solid var(--lime); border-radius: 1rem; background: var(--lime) }
+.motion-shell::after { display: none }
+.motion-stack { border-radius: .65rem; min-height: 34rem; aspect-ratio: 1.83; box-shadow: none }
+.motion-panel {
+  background-color: var(--base);
+  background-image: linear-gradient(90deg,#4b63401f 1px,transparent 1px),linear-gradient(#4b63401f 1px,transparent 1px);
+  background-size: 2.35rem 2.35rem;
+}
+.motion-panel::before { inset: 3%; border: 1px solid #26341f38; border-radius: .3rem; background: none }
+.motion-sticker { --base: #f5f6ee; --type: #30491b }
+.motion-purple { --base: #eee3f8; --type: #5e3a8d }
+.motion-amber { --base: #f8ecd5; --type: #7f4917 }
+.motion-blue { --base: #dcefe9; --type: #18636e }
+.motion-type { inset: 24% 2% auto 42%; opacity: .19; font-size: 12cqw }
+.motion-amber .motion-type,.motion-blue .motion-type { font-size: 14cqw }
+.motion-panel img { filter: drop-shadow(0 .75rem .75rem #131c1433) }
+.motion-top span { border-color: #151712; background: var(--lime); color: #151712; border-radius: .15rem }
+.motion-copy h1 {
+  color: #10120e; font-size: clamp(3.6rem,9vw,9rem); font-weight: 950;
+  text-shadow: .035em .035em var(--lime); line-height: .89;
+}
+.motion-copy h1 span { color: #10120e; font-size: .59em; font-weight: 950; margin: 0 0 .12em; letter-spacing: -.08em }
+.motion-copy h1::after { height: .38rem; background: #84be05; border-radius: 0 }
+.motion-role,.motion-role span { color: #283423 }
+.motion-link { background: var(--lime); color: #121410; border: 1px solid #172114; border-radius: .2rem }
+.secondary,.close { color: #192416; border: 1px solid #35463a; border-radius: .2rem }
+.motion-link:hover,.secondary:hover,.close:hover { background: #121410; color: var(--lime) }
+.motion-controls { border-radius: .35rem; background: var(--lime); color: #182617 }
+.motion-scenes button { color: #172114; border-color: #243522; border-radius: .2rem }
+.motion-scenes [aria-pressed="true"] { color: var(--lime); background: #10160e; border-color: #10160e }
+.sticker-art { position: absolute; inset: 8% 4% 8% 48%; pointer-events: none }
+.sticker {
+  position: absolute; display: flex; align-items: center; justify-content: center; gap: 8%;
+  box-shadow: .45rem .55rem 0 #18200f30; border: 1px solid #151b124d;
+}
+.sticker b { width: 14%; aspect-ratio: 1; border: .13em solid #16201c; border-radius: 50%; background: radial-gradient(circle at 55% 54%,#142421 29%,#fff 32%) }
+.sticker-green { width: 37%; height: 61%; left: 30%; top: 34%; background: #43d626; border-radius: 55% 55% 16% 16% / 38% 38% 12% 12%; rotate: 8deg }
+.sticker-blue { width: 41%; height: 22%; top: 10%; right: 2%; background: #4265fb; border-radius: 100rem; rotate: 19deg }
+.sticker-pink { width: 25%; height: 27%; left: 5%; top: 20%; background: #ff8dc5; border-radius: 45%; rotate: -27deg }
+.sticker-yellow { width: 32%; height: 20%; left: 1%; bottom: 4%; background: #ffd633; border-radius: 100rem; rotate: -15deg }
+.sticker-spark { position: absolute; right: 5%; bottom: 9%; font: 900 clamp(2.4rem,7vw,6rem)/1 system-ui; color: #f2652f; transform: rotate(13deg) }
+.book-contents {
+  display: flex; align-items: center; flex-wrap: wrap; gap: .8rem clamp(1rem,4vw,3rem);
+  padding: 1rem clamp(1rem,4vw,3rem); background: var(--lime); border-radius: .3rem;
+}
+.book-contents a { text-decoration: underline; text-underline-offset: .23em; font-weight: 700 }
+.book-contents h2 span { padding-left: .2em; font-weight: 450 }
+.section,.end-page { border: 1px solid var(--lime); border-radius: .55rem }
+.eyebrow { color: #121410; font-style: normal; font-weight: 930 }
+.section-head h2,.end-name,.resume-intro strong,.tag { color: var(--blue) }
+.featured-film { background: #e6edda }
+.frame span { background: var(--lime); color: #121410 }
+.end-page { background: var(--paper); border-top: .45rem solid var(--lime) }
+a:focus-visible,button:focus-visible { outline-color: #357509 }
+@media(max-width:760px) {
+  .motion-stack { min-height: 0; height: clamp(30rem,80svh,43rem) }
+  .sticker-art { inset: 10% 7% 39% 7% }
+  .motion-copy { background: #f5f6eede; color: #121410 }
+  .motion-copy h1 { font-size: clamp(3.3rem,12vw,5.6rem) }
+  .motion-type { inset: 24% 0 auto 5%; font-size: 18cqw }
+  .motion-amber .motion-type,.motion-blue .motion-type { font-size: 22cqw }
+}
+
+/* White poster stock, kinetic stickers and crossing print tapes. */
+.motion-shell {
+  isolation: isolate; overflow: hidden; border: 0; border-radius: 1.05rem;
+  padding: clamp(.45rem,1vw,.9rem); background: #f6f6f0;
+  box-shadow: 0 1.4rem 3.3rem #0005;
+}
+.motion-stack { min-height: 0; aspect-ratio: 1.83; border-radius: .4rem }
+.motion-sticker {
+  background-color: #f1f0e9;
+  background-image: repeating-linear-gradient(19deg,#9a9e9213 0 1px, transparent 1px 7px);
+}
+.motion-sticker::before {
+  inset: 12% 3% 4%; border: 0; border-top: 1px solid #6c706583; border-radius: 0;
+}
+.motion-top { top: 4.5%; inset-inline: 5%; align-items: center }
+.motion-top span {
+  border: 0; border-radius: 0; background: none; padding: 0;
+  color: #1a1d16; font-size: clamp(.75rem,1.5vw,1.1rem); font-weight: 900;
+}
+.motion-top span:last-child {
+  color: transparent; -webkit-text-stroke: 1px #757c70;
+  font: 900 clamp(.85rem,2.5vw,2.25rem)/1 "Arial Black","Helvetica Neue",sans-serif;
+  letter-spacing: -.045em;
+}
+.motion-copy { left: 5.7%; max-width: 49%; top: 44%; transform: translateY(-34%) }
+.motion-copy h1 {
+  font-family: "Arial Black","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  font-size: clamp(4rem,10.5vw,9.5rem); font-weight: 1000;
+  text-shadow: none; line-height: .88; letter-spacing: -.115em;
+}
+.motion-copy h1 span { font-size: .54em; line-height: .88; margin-bottom: .18em }
+.motion-copy h1::after { display: none }
+.motion-role { margin: .85rem 0 .65rem; font-size: clamp(.85rem,1.45vw,1.05rem); font-weight: 800 }
+.poster-burst {
+  inset: 11% auto auto 1%; width: 49%; height: 78%; opacity: .9;
+  background: #c7ff2b;
+  clip-path: polygon(43% 0,51% 20%,74% 7%,71% 28%,99% 21%,83% 42%,99% 53%,80% 60%,91% 79%,67% 75%,58% 99%,46% 76%,26% 96%,27% 73%,3% 80%,20% 59%,0 49%,20% 37%,9% 19%,31% 23%);
+}
+.sticker-art { inset: 15% 1% 14% 49% }
+.sticker, .sticker b { box-shadow: none }
+.sticker { border-color: #17251324 }
+.sticker b { max-width: 1.1rem }
+.sticker-green { left: 42%; top: 42%; width: 35%; height: 64%; rotate: -2deg; background: #44d71b }
+.sticker-blue { top: 13%; right: 14%; width: 38%; height: 23%; rotate: 19deg; background: #214bf9 }
+.sticker-pink { left: 20%; top: 21%; width: 24%; height: 26%; border-radius: 41% 47% 40% 48%; rotate: 39deg }
+.sticker-yellow { left: 17%; bottom: 3%; width: 29%; height: 20%; background: #ffde21 }
+.sticker-orange { right: -7%; bottom: 14%; width: 24%; height: 32%; background: #ff7720; border-radius: .2rem; rotate: -39deg }
+.sticker-side { right: -5%; top: 26%; width: 13%; aspect-ratio: 1; background: #38cc24; border-radius: 50% }
+.poster-square { position: absolute; top: 1%; left: 6%; width: 15%; aspect-ratio: 1; background: #47d92b; rotate: -32deg }
+.sticker-spark { inset: 49% auto auto 13%; font-size: clamp(1.6rem,4vw,3.9rem) }
+.poster-tape { position: absolute; z-index: 2; inset: auto 1% 1%; height: 12%; overflow: hidden; pointer-events: none }
+.poster-tape span {
+  position: absolute; left: -4%; width: 110%; padding: .1em 0; text-align: center;
+  white-space: nowrap; overflow: hidden;
+  background: #38d32a; color: #082916;
+  font: 950 clamp(.55rem,1.65vw,1.35rem)/1.22 "Arial Black",sans-serif;
+  letter-spacing: .14em; transform: rotate(2.2deg); top: 26%;
+}
+.poster-tape span:last-child { background: #d4ff38; color: #13180e; transform: rotate(-3deg); top: 55%; z-index: -1 }
+@media(max-width:760px) {
+  .motion-stack { aspect-ratio: auto; height: clamp(27rem,72svh,34rem) }
+  .motion-top { top: 5%; inset-inline: 7% }
+  .motion-copy { top: auto; bottom: 14%; left: 7%; max-width: 86%; transform: none; background: #f1f0e9e8 }
+  .motion-copy h1 { font-size: clamp(3.2rem,12vw,6rem) }
+  .motion-copy h1 span { font-size: .58em }
+  .motion-role { margin: .55rem 0 }
+  .sticker-art { inset: 12% 4% 46% 22% }
+  .poster-burst { inset: 44% auto auto 0; width: 74%; height: 48% }
+}
+
+.poster-orbit {
+  position: absolute; z-index: -1; width: 84%; height: 62%; left: 9%; top: 22%;
+  border: 1px solid #58822c90; border-radius: 50%; transform: rotate(-25deg);
+  box-shadow: 0 0 0 .85rem #a0c77434, 0 0 0 1.75rem #a0c77424;
+}
+.poster-reel {
+  position: absolute; top: 4%; right: 3%; width: 13%; aspect-ratio: 1; border-radius: 50%;
+  border: .18rem solid #172513; background: var(--lime); transform: rotate(16deg);
+  display: grid; grid-template-columns: repeat(2,1fr); gap: 15%;
+  padding: 3%; box-shadow: inset 0 0 0 .17rem var(--lime), inset 0 0 0 .25rem #172513;
+}
+.poster-reel b { display: block; background: #172513; border-radius: 50%; aspect-ratio: 1 }
+.poster-plus { position: absolute; top: 53%; right: 28%; color: #f7ffe4; font: 900 clamp(1.25rem,3.6vw,3rem)/1 system-ui }
+.sticker-art { isolation: isolate }
+.sticker { transition: transform .22s ease-out,box-shadow .22s ease-out }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+  .motion-shell:hover .sticker-pink { transform: translate(-.35rem,-.55rem) rotate(8deg); box-shadow: .3rem .4rem #17251332 }
+  .motion-shell:hover .sticker-blue { transform: translate(.3rem,-.7rem) rotate(-6deg); box-shadow: .3rem .4rem #17251332 }
+  .motion-shell:hover .sticker-yellow { transform: translate(-.25rem,.4rem) rotate(-8deg) }
+}
+.book-contents {
+  background: #141b12; color: #e9f8d7; border: 1px dashed #8bb16b;
+}
+.book-contents h2 { color: var(--lime) }
+.book-contents a:hover { color: var(--lime) }
+.work-board {
+  --ink: #f1f7e9; --muted: #c9d8c0; --blue: #c7ff27; --line: #45563e;
+  background: repeating-linear-gradient(90deg,#172419 0 1px, transparent 1px 38px),
+    repeating-linear-gradient(#172419 0 1px, transparent 1px 38px),#101610;
+  color: var(--ink);
+}
+.work-board .eyebrow { color: var(--lime); letter-spacing: -.075em }
+.work-board .featured-film {
+  background: radial-gradient(ellipse at 65% 15%, #304d29,transparent 65%),#19231a;
+  border: 1px solid #4d6743;
+}
+.work-board .frame { background: #101710 }
+.work-board .works article { background: #1d2a1f; border-color: #456044 }
+.work-board .works article:nth-child(2) { background: #29223a; border-color: #5f4f77 }
+.work-board .works article:nth-child(3) { background: #302616; border-color: #66513a }
+.work-board .featured-copy h3 { font-size: clamp(1.35rem,4vw,3.35rem); line-height: 1.12 }
+.work-board .featured-copy .tag { display: inline-block; color: #101610; background: var(--lime); padding: .22rem .45rem; transform: rotate(-3deg); margin-bottom: .8rem }
+.work-board .frame:focus-visible { outline-color: var(--lime) }
+#practice { background: #e3ff99 }
+#resume { background: #f5f6ee; border-top: .38rem solid #9cdc19 }
+@media(max-width:590px) {
+  .poster-reel { padding: 2.5% }
+}
+
+/* Film props overlap the graphic shapes without obscuring the navigation. */
+.sticker-art .cover-clapper {
+  position: absolute; z-index: 2; right: 4%; bottom: 8%; width: 25%; aspect-ratio: 1.2;
+  background: #17221c; border-radius: .25rem; transform: rotate(13deg);
+  border: 1px solid #fcf8dc; box-shadow: .3rem .4rem #19251235;
+}
+.cover-clapper::before {
+  content: ''; position: absolute; inset: -17% -1px auto; height: 29%;
+  background: repeating-linear-gradient(128deg,#17221c 0 18%,#fff6d5 18% 33%);
+  border: 1px solid #26362c; border-radius: .15rem; transform: rotate(-12deg); transform-origin: bottom left;
+}
+.cover-clapper span {
+  position: absolute; left: 37%; top: 35%; width: 32%; height: 41%; background: #c7ff27;
+  clip-path: polygon(0 0,100% 50%,0 100%);
+}
+.sticker-art .cover-film {
+  position: absolute; z-index: 1; top: 4%; left: -3%; width: 27%; height: 13%;
+  display: flex; gap: 5%; padding: 4% 6%;
+  border-block: .23rem dotted #16341d; border-radius: .12rem;
+  background: #dbff79; box-shadow: 0 .25rem #19251230; transform: rotate(-19deg);
+}
+.cover-film span { flex: 1; background: #294e33; border-radius: .08rem }
+.motion-copy h1 { text-shadow: .026em .028em #fbfbef, .046em .059em #63813060 }
+.cover-swatches .motion-scenes button::before {
+  content: ''; display: inline-block; width: .65rem; height: .65rem;
+  margin-inline-end: .28rem; background: var(--swatch); border: 1px solid currentColor;
+  border-radius: 50%; vertical-align: .015em;
+}
+.cover-swatches [data-panel="character-stickers"] { --swatch: #70e52e }
+.cover-swatches [data-panel="character-purple"] { --swatch: #a872ee }
+.cover-swatches [data-panel="character-amber"] { --swatch: #ffb444 }
+.cover-swatches [data-panel="character-blue"] { --swatch: #72dedc }
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+  .cover-clapper,.cover-film { transition: transform .24s ease-out }
+  .motion-shell:hover .cover-clapper { transform: translateY(-.4rem) rotate(7deg) }
+  .motion-shell:hover .cover-film { transform: translateY(-.25rem) rotate(-24deg) }
+}
+
+.cover-swatches .cover-motion-toggle {
+  padding: .36rem .66rem;
+  border: 1px solid #243522;
+  border-radius: .2rem;
+  background: #efffb1;
+  color: #182617;
+  font-size: .875rem;
+  font-weight: 700;
+}
+.cover-swatches .cover-motion-toggle:hover { background: #10160e; color: var(--lime) }
+.cover-animated .is-current .sticker {
+  animation: cover-bounce var(--bob-duration, 2.8s) ease-in-out infinite;
+  animation-delay: var(--bob-delay, 0s);
+}
+.cover-animated .is-current .sticker-blue { --bob-duration: 3.1s; --bob-delay: -.45s }
+.cover-animated .is-current .sticker-pink { --bob-duration: 2.5s; --bob-delay: -1.1s }
+.cover-animated .is-current .sticker-yellow { --bob-duration: 2.65s; --bob-delay: -1.5s }
+.cover-animated .is-current .sticker-green { --bob-duration: 3.4s; --bob-delay: -.25s }
+.cover-animated .is-current .cover-film { animation: cover-film-swing 3.3s ease-in-out infinite }
+.cover-animated .is-current .cover-clapper::before { animation: cover-clap 3s ease-in-out infinite }
+.cover-animated .is-current .poster-reel { animation: cover-reel-turn 4s ease-in-out infinite }
+.cover-animated .is-current .poster-plus,
+.cover-animated .is-current .sticker-spark { animation: cover-twinkle 2.45s ease-in-out infinite }
+.cover-animated .is-current .sticker-spark { animation-delay: -1.15s }
+.cover-animated .is-current img { animation: cover-character-sway 3.5s ease-in-out infinite; transform-origin: 50% 46% }
+
+@keyframes cover-bounce {
+  0%,100% { translate: 0 0; scale: 1 }
+  45% { translate: .3rem clamp(-1.75rem,-2vw,-1rem); scale: 1.075 }
+  73% { translate: -.18rem .16rem; scale: .985 }
+}
+@keyframes cover-film-swing {
+  0%,100% { translate: 0 0; rotate: -6deg }
+  50% { translate: .95rem -.62rem; rotate: 14deg }
+}
+@keyframes cover-clap {
+  0%,100% { transform: rotate(-12deg) }
+  27% { transform: rotate(-32deg) }
+  43%,65% { transform: rotate(0deg) }
+}
+@keyframes cover-reel-turn {
+  0%,100% { rotate: -18deg; translate: 0 0 }
+  50% { rotate: 56deg; translate: .28rem -.55rem }
+}
+@keyframes cover-twinkle {
+  0%,100% { scale: .74; opacity: .56 }
+  50% { scale: 1.34; opacity: 1 }
+}
+@keyframes cover-character-sway {
+  0%,100% { translate: -50% 0; rotate: -1.2deg }
+  50% { translate: calc(-50% + .55rem) -1rem; rotate: 1.2deg }
+}

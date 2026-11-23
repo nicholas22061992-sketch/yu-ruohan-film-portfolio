@@ -92,3 +92,182 @@ dialog::backdrop { background: #081832ba }
   .end-contact { width: min(100%,340px) }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } }
+
+.bar { background: #eadfff; color: #2d1b43; margin-bottom: .5rem; border-radius: .9rem }
+.motion-shell { position: relative; isolation: isolate }
+.motion-stack {
+  height: clamp(32rem,59vw,46rem);
+  overflow-y: auto; scroll-snap-type: y mandatory; scrollbar-width: none;
+  border-radius: clamp(1rem,3vw,2.2rem); box-shadow: 0 20px 44px #24183730;
+}
+.motion-stack::-webkit-scrollbar { display: none }
+.motion-panel {
+  position: relative; isolation: isolate; height: 100%; overflow: hidden;
+  scroll-snap-align: start; display: grid; place-items: center;
+  background: radial-gradient(ellipse at 55% 36%,var(--glow),transparent 70%),var(--base);
+}
+.motion-panel::before { content: ''; position: absolute; z-index: -1; inset: 5%; border: 1px solid #ffffff66; border-radius: 1rem }
+.motion-purple { --base: #673e9b; --glow: #a575ce; --type: #f0dbff }
+.motion-amber { --base: #965720; --glow: #dda763; --type: #fff0c8 }
+.motion-blue { --base: #092e5b; --glow: #116c8d; --type: #b0ffff }
+.motion-type {
+  position: absolute; inset: 29% 0 auto; text-align: center; margin: 0;
+  color: var(--type); opacity: .78; font: 900 clamp(2.8rem,14vw,12rem)/.95 "Helvetica Neue",sans-serif;
+  letter-spacing: -.085em;
+}
+.motion-panel img { position: absolute; inset: 7% 0 5%; width: 100%; height: 88%; object-fit: contain; filter: drop-shadow(0 1rem 1rem #10202755) }
+.motion-top,.motion-copy { position: absolute; z-index: 2; pointer-events: none; color: white }
+.motion-top { top: clamp(.8rem,3vw,2rem); inset-inline: clamp(.8rem,3vw,2rem); display: flex; justify-content: space-between; gap: .35rem; font-size: .875rem; font-weight: 750 }
+.motion-top span { border: 1px solid #ffffff9e; border-radius: 99px; padding: .4rem .72rem; background: #25193370 }
+.motion-copy { bottom: clamp(.8rem,3vw,2rem); left: clamp(.8rem,3vw,2rem); padding: .75rem 1rem; border-radius: 1rem; background: #1c1326a8; backdrop-filter: blur(8px) }
+.motion-copy h1 { font-size: clamp(2rem,5vw,4.6rem); line-height: 1; color: white; margin: 0 }
+.motion-copy h1 span { display: block; margin: .5rem 0 .65rem; color: white; font-size: clamp(.9rem,1.4vw,1.2rem); font-weight: 600; letter-spacing: 0 }
+.motion-link { display: inline-block; pointer-events: auto; background: white; color: #2b193e; padding: .5rem .8rem; border-radius: 99px; font-size: .875rem; font-weight: 750 }
+.motion-link:hover { background: #eadfff }
+.motion-controls { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: .65rem; margin-top: 1rem; padding: .65rem .9rem; border-radius: 1rem; background: #eee6fa; color: #35234c }
+.motion-controls p { margin: 0; font-size: .875rem }
+.motion-scenes { display: flex; flex-wrap: wrap; gap: .45rem }
+.motion-scenes button { border: 1px solid #725891; background: transparent; border-radius: 99px; padding: .38rem .75rem; font-size: .875rem; font-weight: 650 }
+.motion-scenes [aria-pressed="true"] { background: #472d66; color: white }
+@media (max-width: 590px) {
+  .motion-stack { height: 33rem; height: clamp(27rem,72svh,33rem) }
+  .motion-panel img { inset: 12% 0 23%; height: 65% }
+  .motion-type { inset-block-start: 24% }
+}
+
+/* The viewport stays in place while each scene's elements enter separately. */
+.motion-stack { position: relative; overflow: hidden; scroll-snap-type: none; aspect-ratio: 1.95; height: auto; min-height: 28rem }
+.motion-panel { position: absolute; inset: 0; z-index: 0; opacity: 0; pointer-events: none }
+.motion-panel:first-child, .motion-panel.is-current { opacity: 1 }
+.motion-panel[aria-hidden="true"] { opacity: 0 }
+.motion-panel.is-current { z-index: 1 }
+.motion-panel img { inset-block: 7% 4%; height: 89% }
+.motion-type { inset-block-start: 25%; font-size: clamp(3rem,13vw,11.5rem) }
+@media (max-width: 590px) {
+  .motion-stack { aspect-ratio: auto; min-height: 0; height: clamp(24rem,70svh,32rem) }
+  .motion-panel img { inset-block: 12% 21%; height: 67% }
+}
+
+/* Frame the upper body while keeping the full artwork for future layouts. */
+.motion-panel {
+  container-type: inline-size;
+}
+.motion-panel img {
+  inset: 4% auto auto 50%;
+  translate: -50% 0;
+  width: auto;
+  height: 174%;
+  max-width: none;
+  clip-path: inset(0 0 46% 0);
+}
+.motion-type {
+  inset-block-start: 22%;
+  opacity: .9;
+  font-size: clamp(3.5rem, 18vw, 17rem);
+  font-size: 18cqw;
+  letter-spacing: -.095em;
+  white-space: nowrap;
+}
+.motion-amber .motion-type,
+.motion-blue .motion-type {
+  font-size: clamp(4.3rem, 22vw, 21rem);
+  font-size: 22cqw;
+}
+@media (max-width: 590px) {
+  .motion-panel img {
+    inset-block-start: 13%;
+    height: 140%;
+    clip-path: inset(0 0 48% 0);
+  }
+  .motion-type { inset-block-start: 25% }
+}
+
+/* The dark illustrated identity carries from the cover through the portfolio. */
+:root {
+  color-scheme: dark;
+  --paper: #181722;
+  --ink: #f8f5ff;
+  --muted: #cdc6db;
+  --blue: #d4ff3f;
+  --line: #3d3450;
+  --violet: #a575ff;
+  --surface: #221d30;
+  background: #101016;
+}
+.bar { border-radius: 0; background: transparent; color: var(--ink); padding-inline: .35rem }
+.brand span { color: var(--blue) }
+.bar a:hover { color: var(--blue) }
+a:focus-visible,button:focus-visible { outline-color: var(--blue) }
+.motion-shell::after {
+  content: ""; position: absolute; z-index: 2; pointer-events: none;
+  inset: 12% 12% auto auto; width: clamp(2rem,7vw,5.5rem); aspect-ratio: 1.2;
+  background: var(--blue);
+  clip-path: polygon(45% 0,57% 36%,100% 36%,66% 55%,80% 93%,49% 68%,16% 94%,30% 57%,0 37%,36% 36%);
+  transform: rotate(13deg);
+}
+.motion-stack { min-height: 34rem; aspect-ratio: 1.95; box-shadow: 0 1rem 3rem #040306a6 }
+.motion-panel::before {
+  inset: 0; border: 0; border-radius: 0;
+  background: radial-gradient(ellipse at 96% 13%,var(--glow) 0%,transparent 32%),linear-gradient(115deg,#111018 42%,transparent 77%);
+}
+.motion-purple { --base: #291642; --glow: #7133cb; --type: #c094ff }
+.motion-amber { --base: #472719; --glow: #aa5626; --type: #ffbc78 }
+.motion-blue { --base: #122a46; --glow: #21699b; --type: #89ecff }
+.motion-panel img { left: 72%; inset-block-start: 6%; height: 174%; filter: drop-shadow(0 1.2rem 1.5rem #060309ba) }
+.motion-type { inset: 29% 0 auto 39%; text-align: left; line-height: .9; opacity: .53; font-size: clamp(4rem,12vw,11rem); font-size: 12cqw }
+.motion-amber .motion-type,.motion-blue .motion-type { font-size: clamp(4rem,14vw,12rem); font-size: 14cqw }
+.motion-top { top: clamp(1.1rem,4vw,3rem); inset-inline-start: clamp(1.1rem,5vw,4rem) }
+.motion-top span { border-color: #b78dff70; color: #efe3ff; background: #351d5285 }
+.motion-copy {
+  left: clamp(1.1rem,5vw,4rem); bottom: auto; top: 50%; transform: translateY(-45%);
+  padding: 0; max-width: 47%; background: transparent; backdrop-filter: none;
+}
+.motion-copy h1 { font-size: clamp(3.2rem,8vw,8rem); letter-spacing: -.09em; line-height: .95 }
+.motion-copy h1 span { margin-top: .85rem; font-size: clamp(1.1rem,2.5vw,2.2rem) }
+.motion-copy h1::after { content: ""; display: block; width: min(10rem,65%); height: .26rem; margin-top: 1rem; background: var(--blue); border-radius: 50%; transform: rotate(-5deg) }
+.motion-role { margin: 1.3rem 0; color: var(--muted); font-weight: 650 }
+.motion-role span { color: var(--blue); padding-inline: .38rem }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem }
+.hero-actions a { pointer-events: auto }
+.motion-link { background: var(--blue); color: #131714; padding: .63rem 1rem }
+.motion-link:hover,.secondary:hover,.close:hover { background: #e5ff93; color: #181722 }
+.secondary,.close { color: var(--ink); background: transparent; border-color: var(--violet) }
+.motion-controls { background: var(--surface); color: var(--muted); margin-top: .75rem }
+.motion-scenes button { border-color: #a575ff80; color: var(--ink) }
+.motion-scenes [aria-pressed="true"] { color: #161817; background: var(--blue); border-color: var(--blue) }
+.section,.end-page { border-radius: 1.15rem; border: 1px solid var(--line) }
+.eyebrow { color: var(--ink); font-weight: 860; font-style: italic; letter-spacing: -.065em }
+.section-head h2,.end-name,.resume-intro strong { color: var(--blue) }
+.works { grid-template-columns: repeat(3,minmax(0,1fr)) }
+.works article,.resume-grid article { background: var(--surface) }
+.tag { color: #dbc4ff }
+.frame { background: #35204b }
+.frame span { background: var(--blue); color: #15171a }
+.frame:hover span { background: white; color: #15171a }
+.featured-film {
+  display: grid; grid-template-columns: minmax(0,1.8fr) minmax(0,1fr); align-items: center;
+  gap: clamp(1rem,3vw,2rem); margin-bottom: 1.2rem; padding: .8rem;
+  border-radius: .9rem; background: #2e1f47;
+}
+.featured-film .frame { aspect-ratio: 2.3; border-radius: .55rem }
+.featured-copy { padding-inline: .4rem }
+.end-page { background: radial-gradient(ellipse at 85% 25%,#321f56,transparent 62%),var(--paper); border-top: .4rem solid var(--violet) }
+@media (max-width: 760px) {
+  .motion-stack { aspect-ratio: auto; min-height: 0; height: clamp(31rem,78svh,42rem) }
+  .motion-panel img { left: 55%; inset-block-start: 10%; height: 142% }
+  .motion-type { inset: 24% 0 auto 5%; opacity: .49; font-size: 18cqw }
+  .motion-amber .motion-type,.motion-blue .motion-type { font-size: 22cqw }
+  .motion-copy { top: auto; bottom: 1.15rem; left: 1rem; max-width: calc(100% - 2rem); transform: none; padding: .6rem .9rem .8rem; border-radius: .85rem; background: #16121fda }
+  .motion-copy h1 { font-size: 2.65rem }
+  .motion-copy h1::after { margin-top: .45rem }
+  .motion-role { margin: .65rem 0 }
+}
+@media (max-width: 590px) {
+  .featured-film,.works { grid-template-columns: 1fr }
+}
+
+/* Preserve portrait framing and avoid enlarging low-resolution footage. */
+.frame .work-poster { display: block; width: auto; max-width: 100%; height: 100%; margin: auto; object-fit: contain }
+.works .frame { aspect-ratio: 1.08; background: #171321 }
+.featured-film .frame { aspect-ratio: 1.45; max-height: 25rem; background: #171321 }
+#player { width: auto; max-width: 100%; height: auto; margin-inline: auto }

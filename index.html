@@ -6,31 +6,82 @@
 <meta name="description" content="余若韩的 AIGC 影像与视觉创作作品集，收录食品宣传、信息流和口播视频。">
 <title>余若韩 · 影像作品集 · AIGC / VISUAL DESIGN</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="neon-poster.css">
+<link rel="stylesheet" href="poster-pages.css">
 <script src="site.js" defer></script>
 </head>
 <body>
 <header class="bar"><a class="brand" href="#top">余若韩 <span> / </span> 作品集</a><nav aria-label="主导航"><a href="#works">精选作品</a><a href="#practice">求职意向</a><a href="#resume">简历</a></nav></header>
 <main id="top">
-<section class="hero" aria-labelledby="intro">
-<div class="cover-header"><span>影视编导</span><span>剪辑 / 拍摄</span></div>
-<p class="cover-type" lang="en" aria-hidden="true">Portfolio</p>
-<div class="cover-copy">
-<h1 id="intro"><span>个人影像</span>作品集</h1>
-<p class="cover-name">余若韩</p>
+<section class="motion-hero" aria-labelledby="intro">
+<div class="motion-shell">
+<div class="motion-top"><span>影视编导</span><span lang="en" aria-hidden="true">PORTFOLIO DESIGN</span></div>
+<div class="motion-stack" role="region" aria-label="角色封面" aria-describedby="motion-help">
+<div class="motion-panel motion-sticker" id="character-stickers">
+<span class="motion-type poster-burst" aria-hidden="true"></span>
+<div class="sticker-art" aria-hidden="true">
+<i class="sticker sticker-green"><b></b><b></b></i>
+<i class="sticker sticker-blue"><b></b><b></b></i>
+<i class="sticker sticker-pink"><b></b><b></b></i>
+<i class="sticker sticker-yellow"><b></b><b></b></i>
+<i class="sticker sticker-orange"><b></b><b></b></i>
+<i class="sticker sticker-side"><b></b></i>
+<i class="poster-square"></i>
+<i class="poster-orbit"></i>
+<i class="poster-reel"><b></b><b></b><b></b><b></b></i>
+<i class="poster-plus">✦</i>
+<i class="cover-clapper"><span></span></i>
+<i class="cover-film"><span></span><span></span><span></span></i>
+<i class="sticker-spark">✷</i>
 </div>
-<nav class="folders" aria-label="作品集目录">
-<a class="folder folder-work" href="#works"><span class="folder-tab" lang="en">Work</span><span>精选作品</span></a>
-<a class="folder folder-career" href="#practice"><span class="folder-tab" lang="en">Career</span><span>求职意向</span></a>
-<a class="folder folder-resume" href="#resume"><span class="folder-tab" lang="en">About Me</span><span>个人简历</span></a>
-</nav>
+</div>
+<div class="motion-panel motion-purple" id="character-purple">
+<span class="motion-type" aria-hidden="true">PORTFOLIO</span>
+<img src="media/character-purple-hd.webp" alt="戴紫色墨镜、身穿渐变夹克的角色">
+</div>
+<div class="motion-panel motion-amber" id="character-amber">
+<span class="motion-type" aria-hidden="true">EDITING</span>
+<img src="media/character-amber-hd.webp" alt="穿黄色毛衣、抬手打招呼的角色">
+</div>
+<div class="motion-panel motion-blue" id="character-blue">
+<span class="motion-type" aria-hidden="true">FILMING</span>
+<img src="media/character-blue-hd.webp" alt="戴发光护目镜、比出剪刀手的角色">
+</div>
+</div>
+<div class="motion-copy"><h1 id="intro"><span lang="en">Portfolio</span>作品集</h1><p class="motion-role">余若韩 <span aria-hidden="true">·</span> 剪辑 / 拍摄</p><div class="hero-actions"><a class="motion-link" href="#works">观看作品</a><a class="secondary" href="#resume">查看简历</a></div></div>
+<div class="poster-tape" aria-hidden="true">
+<span>PORTFOLIO ✦ DESIGN ✦ PORTFOLIO ✦ DESIGN ✦ PORTFOLIO ✦ DESIGN ✦ PORTFOLIO ✦ DESIGN</span>
+<span>PORTFOLIO ✦ DESIGN ✦ PORTFOLIO ✦ DESIGN ✦ PORTFOLIO ✦ DESIGN ✦ PORTFOLIO ✦ DESIGN</span>
+</div>
+</div>
+<div class="motion-controls cover-swatches">
+<p id="motion-help">切换封面 · 键盘 ← / →</p>
+<div class="motion-scenes" role="group" aria-label="角色选择">
+<button type="button" data-panel="character-stickers" aria-pressed="true">贴纸</button>
+<button type="button" data-panel="character-purple" aria-pressed="false">紫色</button>
+<button type="button" data-panel="character-amber" aria-pressed="false">暖黄</button>
+<button type="button" data-panel="character-blue" aria-pressed="false">霓虹</button>
+</div>
+<button class="cover-motion-toggle" type="button" hidden>暂停动效</button>
+</div>
 </section>
-<section class="section" id="works" aria-labelledby="work-title">
+<nav class="book-contents contents-poster" id="contents" aria-labelledby="contents-title">
+<h2 id="contents-title">目录 <span lang="en">CONTENTS</span></h2>
+<div class="contents-grid">
+<a href="#works"><span>精选作品</span><small>四支视频作品</small></a>
+<a href="#practice"><span>求职意向</span><small>剪辑 / 拍摄</small></a>
+<a href="#resume"><span>个人介绍</span><small>经历、技能与简历</small></a>
+<a href="#thanks"><span>联系方式</span><small>微信二维码</small></a>
+</div>
+</nav>
+<section class="section work-board" id="works" aria-labelledby="work-title">
 <div class="section-head"><div><p class="eyebrow">Selected Work</p><h2 id="work-title">精选作品</h2></div><p>4 支视频 · 点击画面播放</p></div>
+<article class="featured-film"><button class="frame" data-video="food" aria-label="播放食品宣传视频"><img class="work-poster" src="media/food-poster.jpg" loading="lazy" alt=""><span aria-hidden="true">▶</span></button><div class="featured-copy"><p class="tag">主打作品 · 产品宣传</p><h3>食品宣传视频</h3><p class="work-summary">从酱料包装切到食材入锅和倒酱，用操作近景交代烹饪过程。</p><p class="work-meta">约 37 秒 · 竖屏</p><div class="film-strip" role="group" aria-label="食品宣传视频画面节选"><img src="media/food-frame-3.jpg" width="184" height="320" loading="lazy" alt=""><img src="media/food-frame-13.jpg" width="184" height="320" loading="lazy" alt=""><img src="media/food-frame-23.jpg" width="184" height="320" loading="lazy" alt=""></div></div></article>
 <div class="works">
-<article><button class="frame" data-video="food" aria-label="播放食品宣传视频"><video src="media/food.mp4#t=1.2" preload="auto" muted playsinline aria-hidden="true"></video><span aria-hidden="true">▶</span></button><p class="tag">产品宣传</p><h3>食品宣传视频</h3></article>
-<article><button class="frame" data-video="feed" aria-label="播放信息流视频"><video src="media/feed.mp4#t=1.2" preload="auto" muted playsinline aria-hidden="true"></video><span aria-hidden="true">▶</span></button><p class="tag">广告短片</p><h3>信息流视频</h3></article>
-<article><button class="frame" data-video="talk" aria-label="播放口播视频一"><video src="media/talk.mp4#t=1.2" preload="auto" muted playsinline aria-hidden="true"></video><span aria-hidden="true">▶</span></button><p class="tag">口播短片</p><h3>口播视频（一）</h3></article>
-<article><button class="frame" data-video="talk2" aria-label="播放口播视频二"><video src="media/talk2.mp4#t=1.2" preload="auto" muted playsinline aria-hidden="true"></video><span aria-hidden="true">▶</span></button><p class="tag">口播短片</p><h3>口播视频（二）</h3></article>
+
+<article><button class="frame" data-video="feed" aria-label="播放信息流视频"><img class="work-poster" src="media/feed-poster.jpg" loading="lazy" alt=""><span aria-hidden="true">▶</span></button><p class="tag">广告短片</p><h3>信息流视频</h3><p class="work-summary">拆箱、包装和掰开拉丝的特写交替出现，把可可福团的质地留在画面中心。</p><p class="work-meta">约 24 秒 · 竖屏</p></article>
+<article><button class="frame" data-video="talk" aria-label="播放口播视频一"><img class="work-poster" src="media/talk-poster.jpg" loading="lazy" alt=""><span aria-hidden="true">▶</span></button><p class="tag">口播短片</p><h3>口播视频（一）</h3><p class="work-summary">以坐姿口播串起故事，中间穿插泰式餐厅门头和餐桌画面，补充现场信息。</p><p class="work-meta">约 45 秒 · 竖屏</p></article>
+<article><button class="frame" data-video="talk2" aria-label="播放口播视频二"><img class="work-poster" src="media/talk2-poster.jpg" loading="lazy" alt=""><span aria-hidden="true">▶</span></button><p class="tag">口播短片</p><h3>口播视频（二）</h3><p class="work-summary">在人物口播、门店和餐品特写之间切换，用重点大字强调叙述中的关键句。</p><p class="work-meta">约 42 秒 · 竖屏</p></article>
 </div>
 </section>
 <section class="section practice" id="practice" aria-labelledby="practice-title">
@@ -42,10 +93,39 @@
 </section>
 <section class="section resume" id="resume" aria-labelledby="resume-title">
 <div class="section-head">
-<div><p class="eyebrow">About Me</p><h2 id="resume-title">个人简历</h2></div>
+<div><p class="eyebrow">About Me</p><h2 id="resume-title">个人介绍</h2></div>
 <a class="secondary" href="resume-yu-ruohan.docx" download="余若韩简历.docx">下载 Word 简历</a>
 </div>
-<p class="resume-intro"><strong>你好，我是余若韩。</strong>影视编导专业在读，具备从脚本撰写、分镜设计到剪辑、字幕包装和调色输出的实训经验。</p>
+<div class="bio-board">
+<div class="bio-portrait">
+<div class="bio-illustration">
+<img src="media/character-amber-hd.webp" alt="" loading="lazy">
+</div>
+<p class="bio-name">余若韩<span>影视编导</span></p>
+</div>
+<div class="bio-info">
+<h3>个人概况</h3>
+<p>我在河南艺术职业学院学习影视编导，求职方向是剪辑与拍摄。校内实训和校园纪实短片项目中，我参与脚本与拍摄筹备，也负责后期剪辑和画面包装。</p>
+<dl class="bio-facts">
+<div><dt>教育</dt><dd>河南艺术职业学院 · 影视编导</dd></div>
+<div><dt>作品类型</dt><dd>纪实短片、产品宣传、信息流与口播</dd></div>
+<div><dt>求职意向</dt><dd>剪辑 / 拍摄</dd></div>
+</dl>
+<h3>创作流程</h3>
+<ul class="bio-flow">
+<li>脚本与分镜</li><li>拍摄与构图</li><li>粗剪与精剪</li><li>字幕与调色</li>
+</ul>
+</div>
+<div class="bio-tools">
+<h3>常用工具</h3>
+<ul>
+<li><span aria-hidden="true">Pr</span>Premiere Pro</li>
+<li><span aria-hidden="true">Ae</span>After Effects</li>
+<li><span aria-hidden="true">剪</span>剪映</li>
+<li><span aria-hidden="true">Ps</span>Photoshop</li>
+</ul>
+</div>
+</div>
 <div class="resume-grid">
 <article><p class="tag">项目经历 · 2025.04–2025.06</p><h3>校园纪实短片创作</h3><p>负责文案和分镜，完成粗剪、精剪、动态字幕、基础特效、调色与音效匹配。</p></article>
 <article><p class="tag">实训经历 · 2025.05–2025.06</p><h3>校内影视实训</h3><p>参与短片脚本和拍摄筹备，负责后期剪辑与包装，并按团队反馈调整叙事节奏。</p></article>
@@ -54,14 +134,19 @@
 </div>
 </section>
 </main>
-<footer class="end-page" id="thanks" aria-label="作品集致谢">
+<footer class="end-page closing-poster" id="thanks" aria-labelledby="thanks-title">
 <div class="end-copy">
-<p class="eyebrow" lang="en" aria-hidden="true">Thank you.</p>
-<h2>感谢观看</h2>
-<p class="end-name">余若韩 · 剪辑 / 拍摄</p>
+<p class="eyebrow" lang="en" aria-hidden="true">THANKS!</p>
+<h2 id="thanks-title">感谢观看</h2>
+<p class="end-name">余若韩 <span>剪辑 / 拍摄</span></p>
+<nav class="closing-links" aria-label="尾页快捷入口">
+<a class="secondary" href="#works">回看作品</a>
+<a class="secondary" href="#resume">查看简历</a>
 <a class="secondary" href="#top">返回首页</a>
+</nav>
 </div>
 <figure class="end-contact">
+<figcaption>微信联系</figcaption>
 <img src="media/wechat-contact.jpg" width="888" height="1131" loading="lazy" alt="微信联系二维码，昵称怎么又下雨">
 </figure>
 </footer>
